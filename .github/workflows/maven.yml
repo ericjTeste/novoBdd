@@ -6,7 +6,7 @@ on:
   pull_request:
     branches: [ "main", "master" ]
   schedule:
-    - cron: '0 9 * * 1' # Alinhado com push e pull_request
+    - cron: '0 9 * * 1'
 
 jobs:
   build:
@@ -28,12 +28,11 @@ jobs:
         sudo apt-get install google-chrome-stable
 
     - name: Build and Run Tests with Maven
-      run: mvn test -Dcucumber.options="--tags @funcionais" # Roda apenas os testes com sua tag
+      run: mvn test -Dcucumber.options="--tags @funcionais"
 
     - name: Upload Test Report
-      if: always() # Garante que o relatório suba mesmo se o teste falhar
+      if: always()
       uses: actions/upload-artifact@v4
       with:
         name: cucumber-report
-        path: target/report.html # O caminho que você configurou no seu Runner
-		
+        path: target/report.html
