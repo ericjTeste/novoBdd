@@ -2,12 +2,11 @@ name: Execução de Testes BDD - Amazon
 
 on:
   push:
-    branches: [ "main", "master" ] # Roda ao fazer push nessas branches
+    branches: [ "main", "master" ]
   pull_request:
     branches: [ "main", "master" ]
-	
-	schedule:
-	    - cron: '0 9 * * 1' # Isso executa toda segunda-feira às 09:00 UTC
+  schedule:
+    - cron: '0 9 * * 1' # Alinhado com push e pull_request
 
 jobs:
   build:
