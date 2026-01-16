@@ -38,7 +38,7 @@ public class Hooks {
     }
 
 
-/* EXECUÇÃO LOCAL
+/*//EXECUÇÃO LOCAL
 	    public static WebDriver driver; // static garante que é o mesmo navegador para todo o projeto
 	    
 	    ChromeOptions options = new ChromeOptions();
